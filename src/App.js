@@ -1,24 +1,30 @@
 import logo from './logo.svg';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
+import ArticleComponent from './components/ArticleComponent'
+import AuthorComponent from './components/AuthorComponent'
+import Start from './components/StartPage/Start';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className='app-wrapper'>
+      <Route exact path="/" render={() => <Start />} />
+
+      <Route path="/articles"
+        render={() => <ArticleComponent />} />
+
+      <Route path="/authors"
+        render={() => <AuthorComponent />} />
+
+      {/* <Route path={"/article" + article.id}
+        render={() => <ArticleComponent />} /> */}
     </div>
+
+    // <div className="App">
+    //   <ArticleComponent />
+    // </div>
   );
 }
 
