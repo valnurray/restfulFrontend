@@ -1,31 +1,32 @@
-import logo from './logo.svg';
-import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
-import ArticleComponent from './components/ArticleComponent'
-import AuthorComponent from './components/AuthorComponent'
-import Start from './components/StartPage/Start';
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import ListArticleComponent from "./components/ListArticleComponent";
+import HeaderComponent from "./components/HeaderComponent";
+import FooterComponent from "./components/FooterComponent";
+import CreateArticleComponent from "./components/CreateArticleComponent";
+import ViewArticleComponent from "./components/ViewArticleComponent";
+import UpdateArticleComponent from "./components/UpdateArticleComponent";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+    return (
+        <div>
+            <BrowserRouter>
+                <HeaderComponent/>
+                <div className="container">
+                    <Switch>
+                        <Route path="/" exact component={ListArticleComponent}/>
+                        <Route path="/article" component={ListArticleComponent}/>
+                        <Route path="/add-article/:id" component={CreateArticleComponent}/>
+                        <Route path="/view-article/:id" component={ViewArticleComponent}/>
+                        <Route path="/update-article/:id" component={UpdateArticleComponent}/>
+                    </Switch>
+                </div>
+                <FooterComponent/>
+            </BrowserRouter>
+        </div>
 
-  return (
-
-    <div className='app-wrapper'>
-      <Route exact path="/" render={() => <Start />} />
-
-      <Route path="/articles"
-        render={() => <ArticleComponent />} />
-
-      <Route path="/authors"
-        render={() => <AuthorComponent />} />
-
-      {/* <Route path={"/article" + article.id}
-        render={() => <ArticleComponent />} /> */}
-    </div>
-
-    // <div className="App">
-    //   <ArticleComponent />
-    // </div>
-  );
+    );
 }
 
 export default App;
