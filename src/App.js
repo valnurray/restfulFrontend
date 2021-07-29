@@ -9,6 +9,7 @@ import UpdateArticleComponent from "./components/ArticlePage/UpdateArticleCompon
 import "bootstrap/dist/css/bootstrap.min.css";
 import PageNotFound from "./components/PageNotFound";
 import Home from "./components/Home";
+import ListAuthorComponent from "./components/AuthorPage/ListAuthorComponent";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                         {/*<Route path="/" exact component={ListArticleComponent}/>*/}
                         <Route path="/" exact component={Home}/>
                         <Route path="/article" component={ListArticleComponent}/>
+                        <Route path="/author" component={ListAuthorComponent}/>
                         <Route path="/add-article/:id" component={CreateArticleComponent}/>
                         <Route path="/view-article/:id" component={ViewArticleComponent}/>
                         <Route path="/update-article/:id" component={UpdateArticleComponent}/>

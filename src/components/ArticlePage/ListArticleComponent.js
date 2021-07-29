@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import EmployeeService from '../../services/ArticleService'
-import ArticleService from "../../services/ArticleService";
+import ArticleService from '../../services/ArticleService'
 
 class ListArticleComponent extends Component {
     constructor(props) {

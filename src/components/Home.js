@@ -24,5 +24,3 @@ const Home = ({embedId}) => (
 
 );
 export default Home;
-
-// https://www.youtube.com/watch?v=rwEOtHDee5o
