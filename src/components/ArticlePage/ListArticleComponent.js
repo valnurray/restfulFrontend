@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
-import EmployeeService from '../services/ArticleService'
-import ArticleService from "../services/ArticleService";
+import EmployeeService from '../../services/ArticleService'
+import ArticleService from "../../services/ArticleService";
 
 class ListArticleComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            article: {},
             articles: []
         }
         this.addArticle = this.addArticle.bind(this);
@@ -52,7 +53,7 @@ class ListArticleComponent extends Component {
                         <tr>
                             <th> Article ID</th>
                             <th> Article Title</th>
-                            {/*<th> Article Author</th>*/}
+                            <th> Article Author</th>
                             <th> Article Body</th>
                             <th> Actions</th>
                         </tr>
@@ -64,7 +65,7 @@ class ListArticleComponent extends Component {
                                     <tr key={article.id}>
                                         <td> {article.id} </td>
                                         <td> {article.title} </td>
-                                        {/*<td> {article.author.lastName} </td>*/}
+                                        <td> {article.author.lastName} </td>
                                         <td> {article.body}</td>
                                         <td>
                                             <button onClick={() => this.editArticle(article.id)}
