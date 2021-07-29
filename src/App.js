@@ -8,6 +8,7 @@ import ViewArticleComponent from "./components/ArticlePage/ViewArticleComponent"
 import UpdateArticleComponent from "./components/ArticlePage/UpdateArticleComponent";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PageNotFound from "./components/PageNotFound";
+import Home from "./components/Home";
 
 function App() {
     return (
@@ -16,7 +17,8 @@ function App() {
                 <HeaderComponent/>
                 <div className="container">
                     <Switch>
-                        <Route path="/" exact component={ListArticleComponent}/>
+                        {/*<Route path="/" exact component={ListArticleComponent}/>*/}
+                        <Route path="/" exact component={Home}/>
                         <Route path="/article" component={ListArticleComponent}/>
                         <Route path="/add-article/:id" component={CreateArticleComponent}/>
                         <Route path="/view-article/:id" component={ViewArticleComponent}/>
