@@ -12,6 +12,7 @@ import Home from "./components/Home/Home";
 import ListAuthorComponent from "./components/AuthorPage/ListAuthorComponent";
 import ViewAuthorComponent from "./components/AuthorPage/ViewAuthorComponent";
 import Navbar from "./Navbar/Navbar";
+import Start from "./components/Start";
 
 function App() {
     return (
@@ -22,7 +23,8 @@ function App() {
                 <div className="container">
                     <Switch>
                         {/*<Route path="/" exact component={ListArticleComponent}/>*/}
-                        <Route path="/" exact component={Home}/>
+                        <Route path="/" exact component={Start}/>
+                        <Route path="/home" component={Home}/>
                         <Route path="/article" component={ListArticleComponent}/>
                         <Route path="/author" component={ListAuthorComponent}/>
                         <Route path="/add-article/:id" component={CreateArticleComponent}/>

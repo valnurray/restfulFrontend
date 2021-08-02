@@ -21,11 +21,9 @@ class Navbar extends Component {
                 </div>
 
                 <div className={styles.titlesFromNavbar}>
-                    {/*<Link activeClassName = {styles.active} to="/">*/}
-                    {/*    Home*/}
-                    {/*</Link>*/}
-                    <NavLink to ="/" activeClassName = {styles.active}> Home</NavLink>
+                    <NavLink to ="/home" activeClassName = {styles.active}> Home</NavLink>
                 </div>
+
             </div>
         )
     }

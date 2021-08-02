@@ -19,10 +19,6 @@
 
 .container{
   grid-area: c;
-  /*background-color: wheat;*/
-  /*background-color: black;*/
-  margin: 5px;
-  padding: 5px;
 }
 
 p {

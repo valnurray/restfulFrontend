@@ -1,5 +1,15 @@
 .homeWrapper {
- background-color: burlywood;
+ /*border: 4px black;*/
+}
+.video-responsive {
+ border: 2px black;
+}
+
+.title {
+ text-align: center;
+}
+
+.description {
 
 }
 
