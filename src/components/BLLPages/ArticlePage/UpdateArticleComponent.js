@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
-import ArticleService from "../../services/ArticleService";
+import EmployeeService from '../../../services/ArticleService';
+import ArticleService from "../../../services/ArticleService";
 
-class CreateArticleComponent extends Component {
+class UpdateArticleComponent extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            // step 2
             id: this.props.match.params.id,
             title: '',
             // author: '',
@@ -14,46 +14,28 @@ class CreateArticleComponent extends Component {
         }
         this.changeTitleHandler = this.changeTitleHandler.bind(this);
         this.changeBodyHandler = this.changeBodyHandler.bind(this);
-        this.saveOrUpdateArticle = this.saveOrUpdateArticle.bind(this);
+        this.updateArticle = this.updateArticle.bind(this);
     }
 
-    // step 3
     componentDidMount() {
-
-        // step 4
-        if (this.state.id === '_add') {
-            return
-        } else {
-            ArticleService.getArticleById(this.state.id).then((res) => {
-                let article = res.data;
-                this.setState({
-                    title: article.title,
-                    // author: article.author.lastName,
-                    body: article.body
-                });
+        ArticleService.getArticleById(this.state.id).then((res) => {
+            let article = res.data;
+            this.setState({
+                title: article.title,
+                author: article.author.lastName,
+                body: article.body
             });
-        }
+        });
     }
 
-    saveOrUpdateArticle = (e) => {
+    updateArticle = (e) => {
         e.preventDefault();
-        let article = {
-            title: this.state.title,
-            // author: this.state.author.lastName,
-            body: this.state.body
-        };
+        let article = {title: this.state.title, author: this.state.author.lastName, body: this.state.body};
         console.log('article => ' + JSON.stringify(article));
-
-        // step 5
-        if (this.state.id === '_add') {
-            ArticleService.createArticle(article).then(res => {
-                this.props.history.push('/article');
-            });
-        } else {
-            ArticleService.updateArticle(article, this.state.id).then(res => {
-                this.props.history.push('/article');
-            });
-        }
+        console.log('id => ' + JSON.stringify(this.state.id));
+        ArticleService.updateArticle(article, this.state.id).then(res => {
+            this.props.history.push('/article');
+        });
     }
 
     changeTitleHandler = (event) => {
@@ -72,14 +54,6 @@ class CreateArticleComponent extends Component {
         this.props.history.push('/article');
     }
 
-    getTitle() {
-        if (this.state.id === '_add') {
-            return <h3 className="text-center">Add Article</h3>
-        } else {
-            return <h3 className="text-center">Update Article</h3>
-        }
-    }
-
     render() {
         return (
             <div>
@@ -87,9 +61,7 @@ class CreateArticleComponent extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="card col-md-6 offset-md-3 offset-md-3">
-                            {
-                                this.getTitle()
-                            }
+                            <h3 className="text-center">Update Employee</h3>
                             <div className="card-body">
                                 <form>
                                     <div className="form-group">
@@ -97,18 +69,18 @@ class CreateArticleComponent extends Component {
                                         <input placeholder="Title" name="title" className="form-control"
                                                value={this.state.title} onChange={this.changeTitleHandler}/>
                                     </div>
+                                    {/*<div className = "form-group">*/}
+                                    {/*    <label> Author </label>*/}
+                                    {/*    <input placeholder="Author" name="author" className="form-control"*/}
+                                    {/*           value={this.state.author.lastName} onChange={this.changeAuthorHandler}/>*/}
+                                    {/*</div>*/}
                                     <div className="form-group">
                                         <label> Body: </label>
                                         <input placeholder="Body" name="body" className="form-control"
                                                value={this.state.body} onChange={this.changeBodyHandler}/>
                                     </div>
-                                    {/*<div className = "form-group">*/}
-                                    {/*    <label> Author: </label>*/}
-                                    {/*    <input placeholder="Author" name="author" className="form-control"*/}
-                                    {/*           value={this.state.author.lastName} onChange={this.changeAuthorHandler}/>*/}
-                                    {/*</div>*/}
 
-                                    <button className="btn btn-success" onClick={this.saveOrUpdateArticle}>Save</button>
+                                    <button className="btn btn-success" onClick={this.updateArticle}>Save</button>
                                     <button className="btn btn-danger" onClick={this.cancel.bind(this)}
                                             style={{marginLeft: "10px"}}>Cancel
                                     </button>
@@ -123,4 +95,4 @@ class CreateArticleComponent extends Component {
     }
 }
 
-export default CreateArticleComponent
+export default UpdateArticleComponent

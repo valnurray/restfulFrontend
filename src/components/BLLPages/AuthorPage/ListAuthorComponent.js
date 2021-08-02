@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import AuthorService from "../../services/AuthorService"
+import AuthorService from "../../../services/AuthorService"
 
 
 
