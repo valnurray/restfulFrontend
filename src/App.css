@@ -1,7 +1,33 @@
 .App {
   text-align: center;
+
 }
 
+.app-wrapper{
+  margin: 5px auto;
+  display: grid;
+  width: 1200px;
+  grid-template-areas:
+  "h h"
+  "n c"
+  "f f";
+
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  /* grid-gap: 10px; */
+}
+
+.container{
+  grid-area: c;
+  /*background-color: wheat;*/
+  /*background-color: black;*/
+  margin: 5px;
+  padding: 5px;
+}
+
+p {
+  font-family: "Times New Roman", Times, serif;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

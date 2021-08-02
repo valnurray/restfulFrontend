@@ -1,0 +1,21 @@
+.navbar {
+    grid-area: n;
+    background-color: burlywood;
+    text-align: center;
+    text-decoration-color:white;
+
+}
+
+.titlesFromNavbar{
+    margin: 20px;
+    font-size: 20px;
+}
+.titlesFromNavbar a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.titlesFromNavbar a.active {
+    color: chocolate;
+}

@@ -1,0 +1,10 @@
+.footerC {
+    grid-area: f;
+    background-color: burlywood;
+    text-align: center;
+    height: 40px;
+}
+
+.footerText {
+    color: white;
+}

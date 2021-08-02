@@ -1,0 +1,12 @@
+.header{
+    grid-area: h;
+    background-color: burlywood;
+    text-align: center;
+    text-decoration-color:white;
+}
+
+.headerText {
+    color: white;
+}
+
+

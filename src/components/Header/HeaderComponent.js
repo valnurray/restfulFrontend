@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import styles from "./Header.module.css"
 
 class HeaderComponent extends Component {
     constructor(props) {
@@ -9,10 +10,12 @@ class HeaderComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div className={styles.header}>
                 <header>
-                    <nav className="navbar navbar-expand-md navbar-dark bg-dark" style={{color: "white"}}>
-                        <div>Article Management App</div>
+                    <nav
+                        // className="navbar navbar-expand-md navbar-dark bg-dark" style={{color: "white"}}
+                    >
+                        <div className={styles.headerText}>Article Management App</div>
                     </nav>
                 </header>
             </div>

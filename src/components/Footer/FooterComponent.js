@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import styles from "./Footer.module.css"
 
 class FooterComponent extends Component {
     constructor(props) {
@@ -9,9 +10,9 @@ class FooterComponent extends Component {
 
     render() {
         return (
-            <div>
-                <footer className="footer" >
-                    <span className="text-muted" >All Rights Reserved 2021 @valnur</span>
+            <div className={styles.footerC}>
+                <footer  >
+                    <div className={styles.footerText}>All Rights Reserved 2021 @valnur</div>
                 </footer>
             </div>
         )
