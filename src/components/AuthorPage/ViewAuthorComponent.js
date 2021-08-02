@@ -7,7 +7,9 @@ class ViewAuthorComponent extends Component {
 
         this.state = {
             id: this.props.match.params.id,
-            author: {}
+            author: {},
+            article: {},
+            articles: []
         }
     }
 
@@ -40,13 +42,6 @@ class ViewAuthorComponent extends Component {
                         <div className="row">
                             <label> Author Last Name: {this.state.author.lastName}</label>
                         </div>
-                        {/*<div className = "row">*/}
-                        {/*    <label> Article Author: </label>*/}
-                        {/*    <div> { this.state.article.author.lastName}</div>*/}
-                        {/*</div>*/}
-                        {/*<div className="row">*/}
-                        {/*    <label> Article Body: {this.state.article.body}</label>*/}
-                        {/*</div>*/}
                     </div>
 
                 </div>
