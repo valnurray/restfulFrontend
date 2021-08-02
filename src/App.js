@@ -25,8 +25,8 @@ function App() {
                         <Route path="/author" component={ListAuthorComponent}/>
                         <Route path="/add-article/:id" component={CreateArticleComponent}/>
                         <Route path="/view-article/:id" component={ViewArticleComponent}/>
-                        <Route path="/update-article/:id" component={UpdateArticleComponent}/>
                         <Route path="/view-author/:id" component={ViewAuthorComponent}/>
+                        <Route path="/update-article/:id" component={UpdateArticleComponent}/>
                         <Route component={PageNotFound} />
                     </Switch>
                 </div>
