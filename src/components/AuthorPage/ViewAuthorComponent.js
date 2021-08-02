@@ -1,24 +1,24 @@
-import React, {Component} from 'react'
-import ArticleService from '../../services/ArticleService'
+import React, {Component} from "react";
+import AuthorService from "../../services/AuthorService"
 
-class ViewArticleComponent extends Component {
+class ViewAuthorComponent extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
             id: this.props.match.params.id,
-            article: {}
+            author: {}
         }
     }
 
     componentDidMount() {
-        ArticleService.getArticleById(this.state.id).then(res => {
-            this.setState({article: res.data});
+        AuthorService.getAuthorById(this.state.id).then(res => {
+            this.setState({author: res.data});
         })
     }
 
     cancel() {
-        this.props.history.push('/article');
+        this.props.history.push('/author');
     }
 
     render() {
@@ -29,18 +29,24 @@ class ViewArticleComponent extends Component {
                     <h3 className="text-center"> View Article Details</h3>
                     <div className="card-body">
                         <div className="row">
-                            <label> Article ID: {this.state.article.id}</label>
+                            <label> Author ID: {this.state.author.id}</label>
                         </div>
                         <div className="row">
-                            <label> Article Title: {this.state.article.title}</label>
+                            <label> Author Description: {this.state.author.description}</label>
+                        </div>
+                        <div className="row">
+                            <label> Author Firs Name: {this.state.author.firstName}</label>
+                        </div>
+                        <div className="row">
+                            <label> Author Last Name: {this.state.author.lastName}</label>
                         </div>
                         {/*<div className = "row">*/}
                         {/*    <label> Article Author: </label>*/}
                         {/*    <div> { this.state.article.author.lastName}</div>*/}
                         {/*</div>*/}
-                        <div className="row">
-                            <label> Article Body: {this.state.article.body}</label>
-                        </div>
+                        {/*<div className="row">*/}
+                        {/*    <label> Article Body: {this.state.article.body}</label>*/}
+                        {/*</div>*/}
                     </div>
 
                 </div>
@@ -51,4 +57,7 @@ class ViewArticleComponent extends Component {
     }
 }
 
-export default ViewArticleComponent
+
+
+
+export default ViewAuthorComponent;

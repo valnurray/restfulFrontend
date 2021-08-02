@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import PageNotFound from "./components/PageNotFound";
 import Home from "./components/Home";
 import ListAuthorComponent from "./components/AuthorPage/ListAuthorComponent";
+import ViewAuthorComponent from "./components/AuthorPage/ViewAuthorComponent";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                         <Route path="/add-article/:id" component={CreateArticleComponent}/>
                         <Route path="/view-article/:id" component={ViewArticleComponent}/>
                         <Route path="/update-article/:id" component={UpdateArticleComponent}/>
+                        <Route path="/view-author/:id" component={ViewAuthorComponent}/>
                         <Route component={PageNotFound} />
                     </Switch>
                 </div>
