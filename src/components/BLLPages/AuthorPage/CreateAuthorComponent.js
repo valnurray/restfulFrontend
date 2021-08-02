@@ -40,7 +40,7 @@ class CreateAuthorComponent extends Component {
             firstName: this.state.firstName,
             lastName: this.state.lastName
         };
-        console.log('article => ' + JSON.stringify(author));
+        console.log('author => ' + JSON.stringify(author));
 
         if (this.state.id === '_add') {
             AuthorService.createAuthor(author).then(res => {

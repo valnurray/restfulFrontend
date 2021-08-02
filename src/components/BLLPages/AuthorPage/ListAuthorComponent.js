@@ -53,7 +53,7 @@ class ListAuthorComponent extends Component {
                         <thead>
                         <tr>
                             <th> Author ID</th>
-                            {/*<th> Author Articles</th>*/}
+                            <th> Author Articles</th>
                             <th> Author Description</th>
                             <th> Author FirstName</th>
                             <th> Author LastName</th>
@@ -66,7 +66,9 @@ class ListAuthorComponent extends Component {
                                 author =>
                                     <tr key={author.id}>
                                         <td> {author.id} </td>
-                                        {/*<td> {author.articles.map} </td>*/}
+                                        <td> {author.articles.map(
+                                            article => article.title + "; "
+                                        )} </td>
                                         <td> {author.description} </td>
                                         <td> {author.firstName}</td>
                                         <td> {author.lastName}</td>
@@ -74,11 +76,11 @@ class ListAuthorComponent extends Component {
                                             <button onClick={() => this.editAuthor(author.id)}
                                                     className="btn btn-info">Update
                                             </button>
-                                            <button style={{marginLeft: "10px"}}
+                                            <button style={{marginLeft: "5px"}}
                                                     onClick={() => this.deleteAuthor(author.id)}
                                                     className="btn btn-danger">Delete
                                             </button>
-                                            <button style={{marginLeft: "10px"}}
+                                            <button style={{marginLeft: "5px"}}
                                                     onClick={() => this.viewAuthor(author.id)}
                                                     className="btn btn-info">View
                                             </button>

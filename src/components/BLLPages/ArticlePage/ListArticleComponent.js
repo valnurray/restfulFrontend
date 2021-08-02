@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import EmployeeService from '../../../services/ArticleService'
 import ArticleService from '../../../services/ArticleService'
 
 class ListArticleComponent extends Component {
@@ -15,7 +14,7 @@ class ListArticleComponent extends Component {
     }
 
     deleteArticle(id) {
-        EmployeeService.deleteArticle(id).then(res => {
+        ArticleService.deleteArticle(id).then(res => {
             this.setState({articles: this.state.articles.filter(article => article.id !== id)});
         });
     }
@@ -65,7 +64,7 @@ class ListArticleComponent extends Component {
                                     <tr key={article.id}>
                                         <td> {article.id} </td>
                                         <td> {article.title} </td>
-                                        <td> {article.author.lastName} </td>
+                                        <td> {article.author === null ? "-" : article.author.lastName} </td>
                                         <td> {article.body}</td>
                                         <td>
                                             <button onClick={() => this.editArticle(article.id)}
