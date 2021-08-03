@@ -1,8 +1,8 @@
-import styles from "./Home.module.css"
+import styles from "./Digest.module.css"
 
 
 
-const Home = ({embedId}) => (
+const Digest = ({embedId}) => (
     <div className={styles.homeWrapper}>
         <h1 className={styles.title}>
             Welcome!
@@ -75,4 +75,4 @@ const Home = ({embedId}) => (
 
 
 );
-export default Home;
+export default Digest;

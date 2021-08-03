@@ -21,7 +21,7 @@ class Navbar extends Component {
                 </div>
 
                 <div className={styles.titlesFromNavbar}>
-                    <NavLink to ="/home" activeClassName = {styles.active}> Home</NavLink>
+                    <NavLink to ="/digest" activeClassName = {styles.active}> Digest</NavLink>
                 </div>
 
             </div>

@@ -8,7 +8,7 @@ import ViewArticleComponent from "./components/BLLPages/ArticlePage/ViewArticleC
 import UpdateArticleComponent from "./components/BLLPages/ArticlePage/UpdateArticleComponent";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PageNotFound from "./components/BasicPages/PageNotFound/PageNotFound";
-import Home from "./components/BasicPages/Home/Home";
+import Digest from "./components/BasicPages/Digest/Digest";
 import ListAuthorComponent from "./components/BLLPages/AuthorPage/ListAuthorComponent";
 import ViewAuthorComponent from "./components/BLLPages/AuthorPage/ViewAuthorComponent";
 import Navbar from "./components/BasicPages/Navbar/Navbar";
@@ -26,7 +26,7 @@ function App() {
                     <Switch>
                         {/*<Route path="/" exact component={ListArticleComponent}/>*/}
                         <Route path="/" exact component={Start}/>
-                        <Route path="/home" component={Home}/>
+                        <Route path="/digest" component={Digest}/>
                         <Route path="/article" component={ListArticleComponent}/>
                         <Route path="/author" component={ListAuthorComponent}/>
                         <Route path="/add-article/:id" component={CreateArticleComponent}/>
