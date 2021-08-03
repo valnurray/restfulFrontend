@@ -13,6 +13,7 @@ class Start extends Component {
     render() {
         return (
             <div className={styles.LoremPage}>
+
                 <div className={styles.LoremPageBlock}>
                     <h1>Lorem ipsum dolor sit amet</h1>
                     <img className={styles.LoremImage} src={LoremIpsum}/>
@@ -35,6 +36,7 @@ class Start extends Component {
                         sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
                 </div>
+
                 <div className={styles.LoremPageBlock}>
                     <h1>Lorem ipsum dolor sit amet</h1>
                     <img className={styles.LoremImage} src={Lorem2}/>
