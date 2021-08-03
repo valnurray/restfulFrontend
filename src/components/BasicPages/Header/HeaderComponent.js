@@ -15,7 +15,7 @@ class HeaderComponent extends Component {
                     <nav
                         // className="navbar navbar-expand-md navbar-dark bg-dark" style={{color: "white"}}
                     >
-                        <div className={styles.headerText}>Article Management App</div>
+                        <div className={styles.headerText}>Training PET application</div>
                     </nav>
                 </header>
             </div>
