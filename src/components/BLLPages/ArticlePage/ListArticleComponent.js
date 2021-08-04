@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import ArticleService from '../../../services/ArticleService'
+import {Tooltip} from "@material-ui/core";
+
 
 class ListArticleComponent extends Component {
     constructor(props) {
@@ -62,10 +64,23 @@ class ListArticleComponent extends Component {
                             this.state.articles.map(
                                 article =>
                                     <tr key={article.id}>
-                                        <td> {article.id} </td>
-                                        <td> {article.title} </td>
-                                        <td> {article.author === null ? "-" : article.author.lastName} </td>
-                                        <td> {article.body}</td>
+
+                                        <Tooltip title={"Article ID is: " + article.id} arrow >
+                                            <td>{article.id} </td>
+                                        </Tooltip>
+
+                                        <Tooltip title={article.title} arrow >
+                                            <td> {article.title} </td>
+                                        </Tooltip>
+
+                                        <Tooltip title={article.author === null ? "-" : article.author.lastName} arrow >
+                                            <td> {article.author === null ? "-" : article.author.lastName} </td>
+                                        </Tooltip>
+
+                                        <Tooltip title={article.body} arrow >
+                                            <td> {article.body}</td>
+                                        </Tooltip>
+
                                         <td>
                                             <button onClick={() => this.editArticle(article.id)}
                                                     className="btn btn-info">Update
