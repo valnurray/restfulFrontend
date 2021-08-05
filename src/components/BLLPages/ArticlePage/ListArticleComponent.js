@@ -53,7 +53,7 @@ class ListArticleComponent extends Component {
 
                         <thead>
                         <tr>
-                            <th > Article ID</th>
+                            <th> Article ID</th>
                             <th> Article Title</th>
                             <th> Article Author</th>
                             <th> Article Body</th>

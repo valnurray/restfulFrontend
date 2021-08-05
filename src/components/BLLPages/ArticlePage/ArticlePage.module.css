@@ -11,13 +11,18 @@
 .authorColumn{
     width: 25%;
     max-width: 100px;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .bodyColumn{
     width: 25%;
     max-width: 100px;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 .actionColumn{
     width: 25%;
     min-width: 250px;
+
 }

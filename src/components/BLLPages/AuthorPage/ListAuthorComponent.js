@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import AuthorService from "../../../services/AuthorService"
+import {Tooltip} from "@material-ui/core";
+import styles from "../AuthorPage/AuthorPage.module.css";
 
 
 
@@ -54,7 +56,7 @@ class ListAuthorComponent extends Component {
                         <tr>
                             <th> Author ID</th>
                             <th> Author Articles</th>
-                            <th> Author Description</th>
+                            <th> Biography and Contribution</th>
                             <th> Author FirstName</th>
                             <th> Author LastName</th>
                             <th> Actions</th>
@@ -66,13 +68,18 @@ class ListAuthorComponent extends Component {
                                 author =>
                                     <tr key={author.id}>
                                         <td> {author.id} </td>
-                                        <td> {author.articles.map(
-                                            article => article.title + "; "
-                                        )} </td>
-                                        <td> {author.description} </td>
-                                        <td> {author.firstName}</td>
-                                        <td> {author.lastName}</td>
-                                        <td>
+                                        <Tooltip title={author.articles.map(
+                                        article => article.title + "; "
+                                        )} arrow >
+                                            <td className={styles.articleColumn}> {author.articles.map(
+                                                article => article.title + "; "
+                                            )} </td>
+                                        </Tooltip>
+
+                                        <td className={styles.descriptionColumn} > {author.description} </td>
+                                        <td className={styles.firstNameColumn} > {author.firstName}</td>
+                                        <td className={styles.lastNameColumn} > {author.lastName}</td>
+                                        <td className={styles.actionColumn} >
                                             <button onClick={() => this.editAuthor(author.id)}
                                                     className="btn btn-info">Update
                                             </button>
