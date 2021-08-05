@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import EmployeeService from '../../../services/ArticleService';
-import ArticleService from "../../../services/ArticleService";
+import ArticleService from '../../../services/ArticleService';
 
 class UpdateArticleComponent extends Component {
     constructor(props) {
@@ -57,7 +56,7 @@ class UpdateArticleComponent extends Component {
     render() {
         return (
             <div>
-                <br></br>
+                <br> </br>
                 <div className="container">
                     <div className="row">
                         <div className="card col-md-6 offset-md-3 offset-md-3">

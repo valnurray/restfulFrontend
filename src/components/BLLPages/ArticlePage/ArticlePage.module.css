@@ -1,0 +1,23 @@
+.idColumn {
+    width: 5%;
+}
+.titleColumn{
+    width: 25%;
+    max-width: 100px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.authorColumn{
+    width: 25%;
+    max-width: 100px;
+}
+
+.bodyColumn{
+    width: 25%;
+    max-width: 100px;
+}
+.actionColumn{
+    width: 25%;
+    min-width: 250px;
+}

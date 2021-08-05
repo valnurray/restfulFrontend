@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import ArticleService from '../../../services/ArticleService'
 import {Tooltip} from "@material-ui/core";
+import styles from "./ArticlePage.module.css"
 
 
 class ListArticleComponent extends Component {
@@ -52,7 +53,7 @@ class ListArticleComponent extends Component {
 
                         <thead>
                         <tr>
-                            <th> Article ID</th>
+                            <th > Article ID</th>
                             <th> Article Title</th>
                             <th> Article Author</th>
                             <th> Article Body</th>
@@ -63,25 +64,19 @@ class ListArticleComponent extends Component {
                         {
                             this.state.articles.map(
                                 article =>
-                                    <tr key={article.id}>
+                                    <tr  key={article.id}>
 
-                                        <Tooltip title={"Article ID is: " + article.id} arrow >
-                                            <td>{article.id} </td>
-                                        </Tooltip>
+                                            <td className={styles.idColumn} >{article.id} </td>
 
                                         <Tooltip title={article.title} arrow >
-                                            <td> {article.title} </td>
+                                            <td className={styles.titleColumn}> {article.title} </td>
                                         </Tooltip>
 
-                                        <Tooltip title={article.author === null ? "-" : article.author.lastName} arrow >
-                                            <td> {article.author === null ? "-" : article.author.lastName} </td>
-                                        </Tooltip>
+                                            <td className={styles.authorColumn}> {article.author === null ? "-" : article.author.lastName} </td>
 
-                                        <Tooltip title={article.body} arrow >
-                                            <td> {article.body}</td>
-                                        </Tooltip>
+                                            <td className={styles.bodyColumn}> {article.body}</td>
 
-                                        <td>
+                                        <td className={styles.actionColumn}>
                                             <button onClick={() => this.editArticle(article.id)}
                                                     className="btn btn-info">Update
                                             </button>
