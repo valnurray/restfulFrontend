@@ -12,12 +12,12 @@ function ArticleListComponent() {
 
     useEffect(() => {
         getArticles()
-    }, [articles])
+    }, [])
 
     const getArticles = () => {
         ArticleService.getArticles().then((response) => {
             setArticles(response.data);
-            console.log(response.data);
+            // console.log(response.data);
         });
     }
 
@@ -27,9 +27,7 @@ function ArticleListComponent() {
 
     const deleteArticle = (id) => {
         ArticleService.deleteArticle(id).then(res => {
-            {
-                articles:  articles.filter(article => article.id !== id)
-            }
+            setArticles(articles.filter(article => article.id !== id));
         });
     }
 
@@ -51,7 +49,7 @@ function ArticleListComponent() {
             <div className="row">
                 <button className="btn btn-primary" onClick={addArticle}> Add Article</button>
             </div>
-
+            <br></br>
 
             <table className="table table-striped table-bordered">
 

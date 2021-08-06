@@ -5,28 +5,20 @@ import {useHistory, useLocation} from "react-router-dom";
 function ArticleCreateComponent() {
 
     const [article, setArticle] = useState({
-        id: 1, title: '',
+        title: '',
         author: {id: 1, lastName: ""},
-        body: "body"
+        body: ""
     });
 
-    const updateArticle = (newArticleState) => setArticle(prevState => ({...prevState, ...newArticleState}))
+    const updateArticle = (newArticleState) => {
+        console.log(newArticleState);
+        setArticle(prevState => ({...prevState, ...newArticleState}))
+    }
 
     let history = useHistory();
     let location = useLocation();
 
 
-    useEffect(() => {
-        createArticles()
-
-    }, []);
-
-    const createArticles = () => {
-        ArticleService.createArticle().then((response) => {
-            setArticle(response.data);
-            console.log(response.data);
-        });
-    }
     const lastPartOfUrl = window.location.href.split('/').pop()
 
     const getTitle = () => {
@@ -37,6 +29,33 @@ function ArticleCreateComponent() {
         }
     }
 
+    const changeTitleHandler = (event) => {
+        debugger
+        updateArticle({title: event.target.value});
+    }
+    const changeBodyHandler = (event) => {
+        debugger
+        updateArticle({body: event.target.value});
+    }
+
+
+    const cancel = () => {
+        history.push('/article');
+    }
+
+    const saveOrUpdateArticle = (e) => {
+        e.preventDefault();
+        console.log('article => ' + JSON.stringify(article));
+        if (lastPartOfUrl === '_add') {
+            ArticleService.createArticle(article).then(res => {
+                history.push('/article');
+            });
+        } else {
+            ArticleService.updateArticle(article, article.id).then(res => {
+                history.push('/article');
+            });
+        }
+    }
 
     return (
         <div>
@@ -47,30 +66,38 @@ function ArticleCreateComponent() {
                         {
                             getTitle()
                         }
-                        {/*<div className="card-body">*/}
-            {/*                <form>*/}
-            {/*                    <div className="form-group">*/}
-            {/*                        <label> Title: </label>*/}
-            {/*                        <input placeholder="Title" name="title" className="form-control"*/}
-            {/*                               value={this.state.title} onChange={this.changeTitleHandler}/>*/}
-            {/*                    </div>*/}
-            {/*                    <div className="form-group">*/}
-            {/*                        <label> Body: </label>*/}
-            {/*                        <input placeholder="Body" name="body" className="form-control"*/}
-            {/*                               value={this.state.body} onChange={this.changeBodyHandler}/>*/}
-            {/*                    </div>*/}
-            {/*                    /!*<div className = "form-group">*!/*/}
-            {/*                    /!*    <label> Author: </label>*!/*/}
-            {/*                    /!*    <input placeholder="Author" name="author" className="form-control"*!/*/}
-            {/*                    /!*           value={this.state.author.lastName} onChange={this.changeAuthorHandler}/>*!/*/}
-            {/*                    /!*</div>*!/*/}
+                        <div className="card-body">
+                            <form>
+                                <div className="form-group">
+                                    <label> Title: </label>
+                                    <input placeholder="Title" name="title" className="form-control"
+                                           value={article.title}
+                                           onChange={changeTitleHandler}
+                                    />
+                                </div>
 
-            {/*                    <button className="btn btn-success" onClick={this.saveOrUpdateArticle}>Save</button>*/}
-            {/*                    <button className="btn btn-danger" onClick={this.cancel.bind(this)}*/}
-            {/*                            style={{marginLeft: "10px"}}>Cancel*/}
-            {/*                    </button>*/}
-            {/*                </form>*/}
-            {/*            </div>*/}
+
+                                <div className="form-group">
+                                    <label> Body: </label>
+                                    <input placeholder="Body" name="body" className="form-control"
+                                           value={article.body}
+                                           onChange={changeBodyHandler}
+                                    />
+                                </div>
+
+
+                                {/*                    /!*<div className = "form-group">*!/*/}
+                                {/*                    /!*    <label> Author: </label>*!/*/}
+                                {/*                    /!*    <input placeholder="Author" name="author" className="form-control"*!/*/}
+                                {/*                    /!*           value={this.state.author.lastName} onChange={this.changeAuthorHandler}/>*!/*/}
+                                {/*                    /!*</div>*!/*/}
+
+                                <button className="btn btn-success" onClick={saveOrUpdateArticle}>Save</button>
+                                <button className="btn btn-danger" onClick={cancel.bind(this)}
+                                        style={{marginLeft: "10px"}}>Cancel
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
