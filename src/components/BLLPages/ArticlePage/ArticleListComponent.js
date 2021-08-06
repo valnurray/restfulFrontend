@@ -5,7 +5,7 @@ import {Tooltip} from "@material-ui/core";
 import {useHistory} from "react-router-dom";
 
 
-function ArticleComponent() {
+function ArticleListComponent() {
 
     const [articles, setArticles] = useState([]);
     let history = useHistory();
@@ -47,6 +47,7 @@ function ArticleComponent() {
         <div className="container">
             <h2 className="text-center">Article List</h2>
 
+            {/*create*/}
             <div className="row">
                 <button className="btn btn-primary" onClick={addArticle}> Add Article</button>
             </div>
@@ -116,4 +117,4 @@ function ArticleComponent() {
     )
 }
 
-export default ArticleComponent
+export default ArticleListComponent

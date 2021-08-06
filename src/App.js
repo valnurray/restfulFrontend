@@ -15,7 +15,8 @@ import Navbar from "./components/BasicPages/Navbar/Navbar";
 import Start from "./components/BasicPages/StartPage/Start";
 import UpdateAuthorComponent from "./components/BLLPages/AuthorPage/UpdateAuthorComponent";
 import CreateAuthorComponent from "./components/BLLPages/AuthorPage/CreateAuthorComponent";
-import ArticleComponent from "./components/BLLPages/ArticlePage/ArticleComponent";
+import ArticleListComponent from "./components/BLLPages/ArticlePage/ArticleListComponent";
+import ArticleCreateComponent from "./components/BLLPages/ArticlePage/ArticleCreateComponent";
 
 function App() {
     return (
@@ -29,9 +30,10 @@ function App() {
                         <Route path="/" exact component={Start}/>
                         <Route path="/digest" component={Digest}/>
                         {/*<Route path="/article" component={ListArticleComponent}/>*/}
-                        <Route path="/article" component={ArticleComponent}/>
+                        <Route path="/article" component={ArticleListComponent}/>
                         <Route path="/author" component={ListAuthorComponent}/>
-                        <Route path="/add-article/:id" component={CreateArticleComponent}/>
+                        {/*<Route path="/add-article/:id" component={CreateArticleComponent}/>*/}
+                        <Route path="/add-article/:id" component={ArticleCreateComponent}/>
                         <Route path="/add-author/:id" component={CreateAuthorComponent}/>
                         <Route path="/view-article/:id" component={ViewArticleComponent}/>
                         <Route path="/view-author/:id" component={ViewAuthorComponent}/>
