@@ -42,7 +42,7 @@ class ListArticleComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <h2 className="text-center">Article List</h2>
                 <div className="row">
                     <button className="btn btn-primary" onClick={this.addArticle}> Add Article</button>
