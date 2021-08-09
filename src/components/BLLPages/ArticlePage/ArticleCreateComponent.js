@@ -1,11 +1,5 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import ArticleService from "../../../services/ArticleService";
-import Select from 'react-select'
-import AuthorService from "../../../services/AuthorService";
-import styles from "../AuthorPage/AuthorPage.module.css";
-import axios from "axios";
-
-
 
 
 function ArticleCreateComponent(props) {
