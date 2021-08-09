@@ -1,13 +1,20 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import ArticleService from "../../../services/ArticleService";
+import Select from 'react-select'
+import AuthorService from "../../../services/AuthorService";
+import styles from "../AuthorPage/AuthorPage.module.css";
+import axios from "axios";
+
+
 
 
 function ArticleCreateComponent(props) {
     const [article, setArticle] = useState({
         title: '',
-        author: {id: 1, lastName: ""},
+        author: {id: '', lastName: ""},
         body: ""
     });
+
 
 
     const InsertArticle = (e) => {
@@ -24,7 +31,7 @@ function ArticleCreateComponent(props) {
 
         if(!article.title) {
             alert("title cannot be empty");
-            props.history.push('/article')
+            return
         }
 
         ArticleService.createArticle(data)
@@ -68,6 +75,21 @@ function ArticleCreateComponent(props) {
                                            onChange={oneChangeHandler}
                                     />
                                 </div>
+
+
+                                {/*<div className="form-group">*/}
+                                {/*    <label> Body: </label>*/}
+                                {/*    <input placeholder="Author" name="author"*/}
+                                {/*           className="form-control"*/}
+                                {/*           value={article.author.lastName}*/}
+                                {/*           onChange={oneChangeAuthorHandler}*/}
+                                {/*    />*/}
+                                {/*</div>*/}
+
+                                {/*<div className="form-group">*/}
+                                {/*    <Select options={theArray} />*/}
+                                {/*</div>*/}
+
 
                                 <button type="submit" className="btn btn-success"><span>Save</span></button>
                                 <button className="btn btn-danger" onClick={cancel.bind(this)}
