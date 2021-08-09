@@ -1,25 +1,22 @@
 import React, {useState} from "react";
 import ArticleService from "../../../services/ArticleService";
 
-
 function ArticleCreateComponent(props) {
     const [article, setArticle] = useState({
         title: '',
-        author: {id: '', lastName: ""},
+        // author: {id: '', lastName: ""},
         body: ""
     });
-
-
 
     const InsertArticle = (e) => {
         e.preventDefault();
         debugger;
         const data = {
             title: article.title,
-            author: {
-                id: article.author.id,
-                lastName: article.author.lastName
-            },
+            // author: {
+            //     id: article.author.id,
+            //     lastName: article.author.lastName
+            // },
             body: article.body
         };
 
@@ -79,11 +76,6 @@ function ArticleCreateComponent(props) {
                                 {/*           onChange={oneChangeAuthorHandler}*/}
                                 {/*    />*/}
                                 {/*</div>*/}
-
-                                {/*<div className="form-group">*/}
-                                {/*    <Select options={theArray} />*/}
-                                {/*</div>*/}
-
 
                                 <button type="submit" className="btn btn-success"><span>Save</span></button>
                                 <button className="btn btn-danger" onClick={cancel.bind(this)}
