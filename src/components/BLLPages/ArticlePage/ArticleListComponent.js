@@ -37,7 +37,8 @@ function ArticleListComponent() {
     }
 
     const editArticle = (id) => {
-        history.push(`/add-article/${id}`);
+        // history.push(`/add-article/${id}`);
+        history.push(`/update-article/${id}`);
     }
 
 

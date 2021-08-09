@@ -1,9 +1,7 @@
 import './App.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import ListArticleComponent from "./components/BLLPages/ArticlePage/ListArticleComponent";
 import HeaderComponent from "./components/BasicPages/Header/HeaderComponent";
 import FooterComponent from "./components/BasicPages/Footer/FooterComponent";
-import CreateArticleComponent from "./components/BLLPages/ArticlePage/CreateArticleComponent";
 import ViewArticleComponent from "./components/BLLPages/ArticlePage/ViewArticleComponent";
 import UpdateArticleComponent from "./components/BLLPages/ArticlePage/UpdateArticleComponent";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -17,6 +15,7 @@ import UpdateAuthorComponent from "./components/BLLPages/AuthorPage/UpdateAuthor
 import CreateAuthorComponent from "./components/BLLPages/AuthorPage/CreateAuthorComponent";
 import ArticleListComponent from "./components/BLLPages/ArticlePage/ArticleListComponent";
 import ArticleCreateComponent from "./components/BLLPages/ArticlePage/ArticleCreateComponent";
+import ArticleUpdateComponent from "./components/BLLPages/ArticlePage/ArticleUpdateComponent";
 
 function App() {
     return (
@@ -37,7 +36,8 @@ function App() {
                         <Route path="/add-author/:id" component={CreateAuthorComponent}/>
                         <Route path="/view-article/:id" component={ViewArticleComponent}/>
                         <Route path="/view-author/:id" component={ViewAuthorComponent}/>
-                        <Route path="/update-article/:id" component={UpdateArticleComponent}/>
+                        {/*<Route path="/update-article/:id" component={UpdateArticleComponent}/>*/}
+                        <Route path="/update-article/:id" component={ArticleUpdateComponent}/>
                         <Route path="/update-author/:id" component={UpdateAuthorComponent}/>
                         <Route component={PageNotFound} />
                     </Switch>
