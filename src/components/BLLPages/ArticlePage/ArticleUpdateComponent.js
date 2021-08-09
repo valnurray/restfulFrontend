@@ -48,11 +48,9 @@ function ArticleUpdateComponent(props) {
             <div className="container">
                 <div className="row">
                     <div className="card col-md-6 offset-md-3 offset-md-3">
-                        {/*            Update*/}
+                        <h2>Update Article</h2>
                         <div className="card-body">
                             <form>
-                                {/*                    // onSubmit={UpdateArticle}*/}
-                                {/*                >*/}
                                 <div className="form-group">
                                     <label> Title: </label>
                                     <input placeholder="Title" name="title" className="form-control"
@@ -90,128 +88,7 @@ function ArticleUpdateComponent(props) {
 
             </div>
         </div>
-        // <div>
-        //     <br></br>
-        //     <div className="container">
-        //         <div className="row">
-        //             <div className="card col-md-6 offset-md-3 offset-md-3">
-        //                 <h3 className="text-center">Update Employee</h3>
-        //                 <div className="card-body">
-        //
-        //
-        //                     <div className="form-group">
-        //                         <label> Title: </label>
-        //                         <input placeholder="Title" name="title" className="form-control"
-        //                             // value={article.title}
-        //                                value={article.title}
-        //                                onChange={changeTitleHandler}/>
-        //                     </div>
-        //
-        //
-        //                     <div className="form-group">
-        //                         <label> Body: </label>
-        //                         <input placeholder="Body" name="body" className="form-control"
-        //                                value={article.body}
-        //                                onChange={changeBodyHandler}/>
-        //                     </div>
-        //
-        //                     <button className="btn btn-success" onClick={UpdateArticle}>Save</button>
-        //                     {/*<button type="submit" className="btn btn-info mb-1" block><span>Save</span></button>*/}
-        //                     <button className="btn btn-danger" onClick={cancel.bind(this)}
-        //                             style={{marginLeft: "10px"}}>Cancel
-        //                     </button>
-        //
-        //                 </div>
-        //             </div>
-        //         </div>
-        //
-        //     </div>
-        // </div>
     );
-
 }
 
 export default ArticleUpdateComponent;
-
-// const [article, setArticle] = useState({
-//     title: '',
-//     // author: {id: 1, lastName: ""},
-//     body: ""
-// });
-//
-// const updateArticle = (newArticleState) => {
-//     setArticle(prevState => ({...prevState, ...newArticleState}))
-// }
-//
-// let history = useHistory();
-// let location = useLocation();
-//
-//
-// const lastPartOfUrl = window.location.href.split('/').pop()
-//
-// const changeTitleHandler = (event) => {
-//     // updateArticle({title: event.target.value});
-//     // setArticle(event.target.value);
-//     // updateArticle( event.target.value);
-//     // setArticle({title: response.data.title})
-// }
-// const changeBodyHandler = (event) => {
-//     updateArticle({body: event.target.value});
-// }
-//
-// const cancel = () => {
-//     history.push('/article');
-// }
-//
-// const updateArticleHandler = (e) => {
-//     e.preventDefault();
-//     // let article = {title: this.state.title, author: this.state.author.lastName, body: this.state.body};
-//     let article = {setArticle};
-//
-//
-//     console.log('article => ' + JSON.stringify(article));
-//     console.log('id => ' + JSON.stringify(article.id));
-//     debugger
-//     ArticleService.updateArticle(article, article.id).then(res => {
-//         history.push('/article');
-//     });
-// }
-//
-// return(
-//     <div>
-//         <br> </br>
-//         <div className="container">
-//             <div className="row">
-//                 <div className="card col-md-6 offset-md-3 offset-md-3">
-//                     <h3 className="text-center">Update Employee</h3>
-//                     <div className="card-body">
-//
-//
-//                         <div className="form-group">
-//                             <label> Title: </label>
-//                             <input placeholder="Title" name="title" className="form-control"
-//                                 // value={article.title}
-//                                    value={article.title}
-//                                    onChange={changeTitleHandler}/>
-//                         </div>
-//
-//
-//                         <div className="form-group">
-//                             <label> Body: </label>
-//                             <input placeholder="Body" name="body" className="form-control"
-//                                    value={article.body}
-//                                    onChange={changeBodyHandler}/>
-//                         </div>
-//
-//                         <button className="btn btn-success" onClick={updateArticleHandler}>Save</button>
-//                         <button className="btn btn-danger" onClick={cancel.bind(this)}
-//                                 style={{marginLeft: "10px"}}>Cancel
-//                         </button>
-//
-//                     </div>
-//                 </div>
-//             </div>
-//
-//         </div>
-//     </div>
-// );

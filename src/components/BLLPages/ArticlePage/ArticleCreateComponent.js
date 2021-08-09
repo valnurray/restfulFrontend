@@ -46,7 +46,7 @@ function ArticleCreateComponent(props) {
                 <div className="container">
                     <div className="row">
                         <div className="card col-md-6 offset-md-3 offset-md-3">
-                            ADD
+                            <h2>ADD Article</h2>
                             <div className="card-body">
                                 <form onSubmit={InsertArticle}>
                                 <div className="form-group">
