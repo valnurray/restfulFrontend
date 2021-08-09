@@ -3,7 +3,6 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import HeaderComponent from "./components/BasicPages/Header/HeaderComponent";
 import FooterComponent from "./components/BasicPages/Footer/FooterComponent";
 import ViewArticleComponent from "./components/BLLPages/ArticlePage/ViewArticleComponent";
-import UpdateArticleComponent from "./components/BLLPages/ArticlePage/UpdateArticleComponent";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PageNotFound from "./components/BasicPages/PageNotFound/PageNotFound";
 import Digest from "./components/BasicPages/Digest/Digest";
@@ -22,24 +21,20 @@ function App() {
         <div className="app-wrapper">
             <BrowserRouter>
                 <HeaderComponent/>
-                <Navbar />
+                <Navbar/>
                 <div className="container">
                     <Switch>
-                        {/*<Route path="/" exact component={ListArticleComponent}/>*/}
                         <Route path="/" exact component={Start}/>
                         <Route path="/digest" component={Digest}/>
-                        {/*<Route path="/article" component={ListArticleComponent}/>*/}
                         <Route path="/article" component={ArticleListComponent}/>
                         <Route path="/author" component={ListAuthorComponent}/>
-                        {/*<Route path="/add-article/:id" component={CreateArticleComponent}/>*/}
                         <Route path="/add-article/:id" component={ArticleCreateComponent}/>
                         <Route path="/add-author/:id" component={CreateAuthorComponent}/>
                         <Route path="/view-article/:id" component={ViewArticleComponent}/>
                         <Route path="/view-author/:id" component={ViewAuthorComponent}/>
-                        {/*<Route path="/update-article/:id" component={UpdateArticleComponent}/>*/}
                         <Route path="/update-article/:id" component={ArticleUpdateComponent}/>
                         <Route path="/update-author/:id" component={UpdateAuthorComponent}/>
-                        <Route component={PageNotFound} />
+                        <Route component={PageNotFound}/>
                     </Switch>
                 </div>
                 <FooterComponent/>

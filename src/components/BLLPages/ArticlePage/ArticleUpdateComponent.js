@@ -75,9 +75,9 @@ function ArticleUpdateComponent(props) {
                                 {/*                    /!*                    /!*           value={this.state.author.lastName} onChange={this.changeAuthorHandler}/>*!/*!/*/}
                                 {/*                    /!*                    /!*</div>*!/*!/*/}
 
-                                {/*                    /!*<button className="btn btn-success" onClick={saveOrUpdateArticle}>Save</button>*!/*/}
+
                                 <button className="btn btn-success" onClick={UpdateArticle}>Save</button>
-                                {/*                    /!*<button type="submit" className="btn btn-info mb-1" block><span>Save</span></button>*!/*/}
+
                                 <button className="btn btn-danger" onClick={cancel.bind(this)}
                                         style={{marginLeft: "10px"}}>Cancel
                                 </button>
