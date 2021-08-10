@@ -39,7 +39,6 @@ function ArticleListComponent() {
         history.push(`/update-article/${id}`);
     }
 
-
     return (
         <div  data-testid="ArticleListComponent" className="container">
             <h2 className="text-center">Article List</h2>

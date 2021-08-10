@@ -18,7 +18,6 @@ function ViewArticleComponent() {
         getArticle()
     }, [])
 
-
     const getArticle = () => {
         ArticleService.getArticleById(id).then((response) => {
             setArticle(response.data);

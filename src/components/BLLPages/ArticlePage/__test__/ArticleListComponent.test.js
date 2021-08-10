@@ -7,12 +7,12 @@ import renderer from "react-test-renderer";
 
 afterEach(cleanup);
 
+
 it("render without crashing", () => {
     const div = document.createElement(`div`);
     ReactDOM.render(<ArticleListComponent />, div);
     ReactDOM.unmountComponentAtNode(div);
 });
-
 
 it("render button cancel correctly", () => {
     const {getByTestId} = render(<ArticleListComponent/>);

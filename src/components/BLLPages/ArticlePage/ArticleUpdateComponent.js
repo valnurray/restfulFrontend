@@ -58,7 +58,6 @@ function ArticleUpdateComponent(props) {
                                     />
                                 </div>
 
-
                                 <div className="form-group">
                                     <label> Body: </label>
                                     <input placeholder="Body" name="body" className="form-control"

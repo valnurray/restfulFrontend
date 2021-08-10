@@ -5,6 +5,7 @@ import {cleanup, render} from "@testing-library/react";
 import '@testing-library/jest-dom';
 import renderer from "react-test-renderer";
 
+
 afterEach(cleanup);
 
 it("render without crashing", () => {
@@ -12,7 +13,6 @@ it("render without crashing", () => {
     ReactDOM.render(<ArticleCreateComponent />, div);
     ReactDOM.unmountComponentAtNode(div);
 });
-
 
 it("render button cancel correctly", () => {
     const {getByTestId} = render(<ArticleCreateComponent/>);

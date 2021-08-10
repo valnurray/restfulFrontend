@@ -5,7 +5,6 @@ import {cleanup, render} from "@testing-library/react";
 import '@testing-library/jest-dom';
 import renderer from "react-test-renderer";
 
-
 afterEach(cleanup);
 
 it("render without crashing", () => {

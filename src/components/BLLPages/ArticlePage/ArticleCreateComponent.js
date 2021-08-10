@@ -41,7 +41,6 @@ function ArticleCreateComponent() {
         history.push('/article');
     }
 
-
     return (
         <div data-testid="ArticleCreateComponent">
             <br></br>
