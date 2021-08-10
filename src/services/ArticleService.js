@@ -19,7 +19,9 @@ class ArticleService {
     }
 
     updateArticle(article) {
-        return axios.put(ARTICLES_REST_API_URL + '/' + article.id, { title: article.title, body: article.body });
+        return axios.put(ARTICLES_REST_API_URL + '/' + article.id, { title: article.title, body: article.body,
+            // author: article.author
+        });
     }
 
     deleteArticle(articleId) {
