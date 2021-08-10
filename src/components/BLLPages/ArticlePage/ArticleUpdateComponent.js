@@ -42,8 +42,7 @@ function ArticleUpdateComponent(props) {
         </div>
     }
     return (
-
-        <div>
+        <div data-testid="ArticleUpdateComponent">
             <br></br>
             <div className="container">
                 <div className="row">
@@ -68,17 +67,9 @@ function ArticleUpdateComponent(props) {
                                     />
                                 </div>
 
-
-                                {/*                    /!*                    /!*<div className = "form-group">*!/*!/*/}
-                                {/*                    /!*                    /!*    <label> Author: </label>*!/*!/*/}
-                                {/*                    /!*                    /!*    <input placeholder="Author" name="author" className="form-control"*!/*!/*/}
-                                {/*                    /!*                    /!*           value={this.state.author.lastName} onChange={this.changeAuthorHandler}/>*!/*!/*/}
-                                {/*                    /!*                    /!*</div>*!/*!/*/}
-
-
                                 <button className="btn btn-success" onClick={UpdateArticle}>Save</button>
 
-                                <button className="btn btn-danger" onClick={cancel.bind(this)}
+                                <button className="btn btn-danger" onClick={cancel}
                                         style={{marginLeft: "10px"}}>Cancel
                                 </button>
                             </form>

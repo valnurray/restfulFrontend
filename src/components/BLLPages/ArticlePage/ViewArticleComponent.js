@@ -1,54 +1,61 @@
-import React, {Component} from 'react'
+import React, {useEffect, useState} from 'react'
 import ArticleService from '../../../services/ArticleService'
+import {useHistory, useParams} from "react-router-dom";
 
-class ViewArticleComponent extends Component {
-    constructor(props) {
-        super(props)
+function ViewArticleComponent() {
+    const [article, setArticle] = useState({
+        title: '',
+        author: {
+            id: '',
+            lastName: ''
+        },
+        body: ''
+    });
 
-        this.state = {
-            id: this.props.match.params.id,
-            article: {}
-        }
+    const {id} = useParams();
+
+    useEffect(() => {
+        getArticle()
+    }, [])
+
+
+    const getArticle = () => {
+        ArticleService.getArticleById(id).then((response) => {
+            setArticle(response.data);
+        });
     }
 
-    componentDidMount() {
-        ArticleService.getArticleById(this.state.id).then(res => {
-            this.setState({article: res.data});
-        })
+    const history = useHistory();
+
+    const cancel = () => {
+       history.push('/article');
     }
 
-    cancel() {
-        this.props.history.push('/article');
-    }
-
-    render() {
         return (
-            <div>
+            <div data-testid="ViewArticleComponent"  className="container">
                 <br></br>
                 <div className="card col-md-6 offset-md-3">
-                    <h3 className="text-center"> View Article Details</h3>
+                    <h3 className="text-center">View Article Details</h3>
                     <div className="card-body">
                         <div className="row">
-                            <label> Article ID: {this.state.article.id}</label>
+                            <label> Article ID: {article.id}</label>
                         </div>
                         <div className="row">
-                            <label> Article Title: {this.state.article.title}</label>
+                            <label> Article Title: {article.title}</label>
                         </div>
-                        {/*<div className = "row">*/}
-                        {/*    <label> Article Author: </label>*/}
-                        {/*    <div> { this.state.article.author.lastName}</div>*/}
-                        {/*</div>*/}
+                        <div className = "row">
+                            <label> Article Author: {article.author === null ? "-" : article.author.lastName}</label>
+                        </div>
                         <div className="row">
-                            <label> Article Body: {this.state.article.body}</label>
+                            <label> Article Body: {article.body}</label>
                         </div>
                     </div>
 
                 </div>
-                <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>HOME
+                <button className="btn btn-danger" onClick={cancel} style={{marginLeft: "10px"}}>HOME
                 </button>
             </div>
         )
-    }
 }
 
 export default ViewArticleComponent

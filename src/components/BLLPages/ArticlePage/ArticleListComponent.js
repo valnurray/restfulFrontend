@@ -17,7 +17,6 @@ function ArticleListComponent() {
     const getArticles = () => {
         ArticleService.getArticles().then((response) => {
             setArticles(response.data);
-            // console.log(response.data);
         });
     }
 
@@ -37,16 +36,14 @@ function ArticleListComponent() {
     }
 
     const editArticle = (id) => {
-        // history.push(`/add-article/${id}`);
         history.push(`/update-article/${id}`);
     }
 
 
     return (
-        <div className="container">
+        <div  data-testid="ArticleListComponent" className="container">
             <h2 className="text-center">Article List</h2>
 
-            {/*create*/}
             <div className="row">
                 <button className="btn btn-primary" onClick={addArticle}> Add Article</button>
             </div>

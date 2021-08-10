@@ -1,13 +1,15 @@
 import React, {useState} from "react";
 import ArticleService from "../../../services/ArticleService";
 import {useForm} from "react-hook-form";
+import {useHistory} from "react-router-dom";
 
-function ArticleCreateComponent(props) {
+function ArticleCreateComponent() {
     const [article, setArticle] = useState({
         title: '',
-        // author: {id: '', lastName: ""},
         body: ""
     });
+
+    const history = useHistory();
 
     const {
         register,
@@ -20,21 +22,14 @@ function ArticleCreateComponent(props) {
         InsertArticle();
     };
 
-    console.log(watch("example"));
-
-
     const InsertArticle = (e) => {
         const data = {
             title: article.title,
-            // author: {
-            //     id: article.author.id,
-            //     lastName: article.author.lastName
-            // },
             body: article.body
         };
         ArticleService.createArticle(data)
             .then((result) => {
-                props.history.push('/article')
+                history.push('/article')
             });
     };
 
@@ -43,12 +38,12 @@ function ArticleCreateComponent(props) {
     }
 
     const cancel = () => {
-        props.history.push('/article');
+        history.push('/article');
     }
 
 
     return (
-        <div>
+        <div data-testid="ArticleCreateComponent">
             <br></br>
             <div className="container">
                 <div className="row">
@@ -68,12 +63,13 @@ function ArticleCreateComponent(props) {
                                     })}
                                     onChange={oneChangeHandler}
                                 />
-                                {errors?.title?.type === "required" && <p>Title can not be empty</p>}
+                                {errors?.title?.type === "required" &&
+                                <p style={{color: "red"}}>Title can not be empty</p>}
                                 {errors?.title?.type === "minLength" && (
-                                    <p>Title can not be empty</p>
+                                    <p style={{color: "red"}}>Title can not be empty</p>
                                 )}
                                 {errors?.title?.type === "pattern" && (
-                                    <p>Alphabetical characters only</p>
+                                    <p style={{color: "red"}}>Alphabetical characters only</p>
                                 )}
 
                                 <label>Body</label>
@@ -83,13 +79,14 @@ function ArticleCreateComponent(props) {
                                     onChange={oneChangeHandler}
                                 />
                                 {errors?.body?.type === "pattern" && (
-                                    <p>Alphabetical characters only</p>
+                                    <p style={{color: "red"}}>Alphabetical characters only</p>
                                 )}
 
                                 <button type="submit" className="btn btn-success">Save</button>
 
-                                <button className="btn btn-danger" onClick={cancel.bind(this)}
-                                        style={{marginLeft: "10px"}}>Cancel</button>
+                                <button className="btn btn-danger" onClick={cancel}
+                                        style={{marginLeft: "10px"}}>Cancel
+                                </button>
 
                             </form>
                         </div>

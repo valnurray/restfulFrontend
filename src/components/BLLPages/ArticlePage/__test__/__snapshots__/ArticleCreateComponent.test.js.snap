@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  data-testid="ArticleCreateComponent"
+>
+  <br />
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="card col-md-6 offset-md-3 offset-md-3"
+      >
+        <h2>
+          ADD Article
+        </h2>
+        <div
+          className="card-body"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <label>
+              Title
+            </label>
+            <input
+              className="form-control"
+              name="title"
+              onBlur={[Function]}
+              onChange={[Function]}
+            />
+            <label>
+              Body
+            </label>
+            <input
+              className="form-control"
+              name="body"
+              onBlur={[Function]}
+              onChange={[Function]}
+            />
+            <button
+              className="btn btn-success"
+              type="submit"
+            >
+              Save
+            </button>
+            <button
+              className="btn btn-danger"
+              onClick={[Function]}
+              style={
+                Object {
+                  "marginLeft": "10px",
+                }
+              }
+            >
+              Cancel
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
