@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Route, Switch, useLocation,} from "react-router-dom";
+import {BrowserRouter, match, Route, Switch, useLocation,} from "react-router-dom";
 import HeaderComponent from "./components/BasicPages/Header/HeaderComponent";
 import FooterComponent from "./components/BasicPages/Footer/FooterComponent";
 import ViewArticleComponent from "./components/BLLPages/ArticlePage/ViewArticleComponent";
@@ -32,9 +32,7 @@ function App() {
                         <Route path="/add-author/:id" component={CreateAuthorComponent}/>
                         <Route path="/view-article/:id" component={ViewArticleComponent}/>
                         <Route path="/view-author/:id" component={ViewAuthorComponent}/>
-                        <Route path="/update-article/:id"
-                               component={ArticleUpdateComponent}
-                        />
+                        <Route path="/update-article/:id" component={ArticleUpdateComponent}/>
                         <Route path="/update-author/:id" component={UpdateAuthorComponent}/>
                         <Route default component={PageNotFound}/>
                     </Switch>

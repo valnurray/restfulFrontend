@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import ArticleService from '../../../services/ArticleService'
-import {useHistory,
-    // useParam
-} from "react-router-dom";
+import {useHistory,} from "react-router-dom";
 import {useParams} from "react-router";
 
 function ViewArticleComponent(props) {

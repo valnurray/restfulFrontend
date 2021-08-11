@@ -4,7 +4,6 @@ import {Tooltip} from "@material-ui/core";
 import styles from "../AuthorPage/AuthorPage.module.css";
 
 
-
 class ListAuthorComponent extends Component {
     constructor(props) {
         super(props)

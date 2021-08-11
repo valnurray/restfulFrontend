@@ -4,8 +4,9 @@ import {useForm} from "react-hook-form";
 import {useHistory} from "react-router-dom";
 
 function ArticleCreateComponent() {
+
     const [article, setArticle] = useState({
-        title: '',
+        title: "",
         body: ""
     });
 
@@ -23,14 +24,17 @@ function ArticleCreateComponent() {
     };
 
     const InsertArticle = (e) => {
+        debugger
         const data = {
             title: article.title,
             body: article.body
         };
+        debugger
         ArticleService.createArticle(data)
             .then((result) => {
                 history.push('/article')
-            });
+            })
+        debugger
     };
 
     const oneChangeHandler = (e) => {

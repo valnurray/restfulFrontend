@@ -43,9 +43,15 @@ class CreateAuthorComponent extends Component {
         console.log('author => ' + JSON.stringify(author));
 
         if (this.state.id === '_add') {
-            AuthorService.createAuthor(author).then(res => {
-                this.props.history.push('/author');
-            });
+            if (!author.lastName) {
+                alert("lastName cannot be empty");
+                return
+            } else {
+
+                AuthorService.createAuthor(author).then(res => {
+                    this.props.history.push('/author');
+                });
+            }
         } else {
             AuthorService.updateAuthor(author, this.state.id).then(res => {
                 this.props.history.push('/author');
@@ -63,11 +69,8 @@ class CreateAuthorComponent extends Component {
 
     changeLastNameHandler = (event) => {
         this.setState({lastName: event.target.value});
-    }
 
-    // changeAuthorHandler= (event) => {
-    //     this.setState({author: event.target.value});
-    // }
+    }
 
     cancel() {
         this.props.history.push('/author');
@@ -83,7 +86,7 @@ class CreateAuthorComponent extends Component {
 
     render() {
         return (
-            <div data-testid="CreateAuthorComponent" >
+            <div data-testid="CreateAuthorComponent">
                 <br></br>
                 <div className="container">
                     <div className="row">
@@ -111,11 +114,6 @@ class CreateAuthorComponent extends Component {
                                         <input placeholder="LastName" name="lastName" className="form-control"
                                                value={this.state.lastName} onChange={this.changeLastNameHandler}/>
                                     </div>
-                                    {/*<div className = "form-group">*/}
-                                    {/*    <label> Author: </label>*/}
-                                    {/*    <input placeholder="Author" name="author" className="form-control"*/}
-                                    {/*           value={this.state.author.lastName} onChange={this.changeAuthorHandler}/>*/}
-                                    {/*</div>*/}
 
                                     <button className="btn btn-success" onClick={this.saveOrUpdateAuthor}>Save</button>
                                     <button className="btn btn-danger" onClick={this.cancel.bind(this)}
