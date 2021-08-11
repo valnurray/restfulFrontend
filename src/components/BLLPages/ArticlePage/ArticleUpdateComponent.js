@@ -1,14 +1,18 @@
-import React, {useEffect, useState} from "react";
-import {useHistory} from "react-router-dom";
+import React, { useEffect, useState} from "react";
+import {useHistory, useParams} from "react-router-dom";
 import ArticleService from "../../../services/ArticleService";
 
 
 function ArticleUpdateComponent(props) {
     const [article, setArticle] = useState();
     const history = useHistory();
+
+    // const {id} = useParams();
+
     useEffect(() => {
             (async () => {
                 const {data: fetchedArticle} = await ArticleService.getArticleById(props.match.params.id);
+                // const {data: fetchedArticle} = await ArticleService.getArticleById(id);
                 setArticle(fetchedArticle);
             })()
         },
@@ -23,8 +27,6 @@ function ArticleUpdateComponent(props) {
     const UpdateArticle = (e) => {
         e.preventDefault();
 
-        console.log(article)
-
         ArticleService.updateArticle(article)
             .then((result) => {
                 history.push('/article')
@@ -32,7 +34,7 @@ function ArticleUpdateComponent(props) {
     };
 
     const cancel = () => {
-        props.history.push('/article');
+        history.push('/article');
     }
 
 

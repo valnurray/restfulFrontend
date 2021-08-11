@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import ArticleService from '../../../services/ArticleService'
-import {useHistory, useParams} from "react-router-dom";
+import {useHistory,
+    // useParam
+} from "react-router-dom";
+import {useParams} from "react-router";
 
-function ViewArticleComponent() {
+function ViewArticleComponent(props) {
     const [article, setArticle] = useState({
         title: '',
         author: {
@@ -11,7 +14,7 @@ function ViewArticleComponent() {
         },
         body: ''
     });
-
+    const history = useHistory();
     const {id} = useParams();
 
     useEffect(() => {
@@ -20,11 +23,11 @@ function ViewArticleComponent() {
 
     const getArticle = () => {
         ArticleService.getArticleById(id).then((response) => {
+        // ArticleService.getArticleById(props.match.params.id).then((response) => {
             setArticle(response.data);
         });
     }
 
-    const history = useHistory();
 
     const cancel = () => {
        history.push('/article');

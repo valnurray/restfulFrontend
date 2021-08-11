@@ -59,7 +59,7 @@ class UpdateAuthorComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div data-testid="UpdateAuthorComponent" >
                 <br></br>
                 <div className="container">
                     <div className="row">

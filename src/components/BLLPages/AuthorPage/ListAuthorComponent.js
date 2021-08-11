@@ -43,7 +43,7 @@ class ListAuthorComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div data-testid="ListAuthorComponent" >
                 <h2 className="text-center">Authors List</h2>
                 <div className="row">
                     <button className="btn btn-primary" onClick={this.addAuthor}> Add Author</button>

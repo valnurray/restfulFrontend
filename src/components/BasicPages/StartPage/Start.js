@@ -13,9 +13,9 @@ class Start extends Component {
     render() {
         return (
             <div className={styles.LoremPage}>
-
+                <h1 style={{textAlign: 'center'}}>Basic page for starting app</h1>
                 <div className={styles.LoremPageBlock}>
-                    <h1>Lorem ipsum dolor sit amet</h1>
+                    <h2>Lorem ipsum dolor sit amet</h2>
                     <img className={styles.LoremImage} src={LoremIpsum}/>
                     <div>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -38,7 +38,7 @@ class Start extends Component {
                 </div>
 
                 <div className={styles.LoremPageBlock}>
-                    <h1>Lorem ipsum dolor sit amet</h1>
+                    <h2>Lorem ipsum dolor sit amet</h2>
                     <img className={styles.LoremImage} src={Lorem2}/>
                     <div>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,

@@ -25,7 +25,7 @@ class ViewAuthorComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div data-testid="ViewAuthorComponent"  >
                 <br></br>
                 <div className="card col-md-6 offset-md-3">
                     <h3 className="text-center"> View Author Details</h3>

@@ -9,7 +9,8 @@ class PageNotFound extends Component {
 
     render() {
         return (
-            <div>
+            <div  data-testid="PageNotFound"
+                  className='container'>
                 <h1>404 - Not Found!</h1>
                 <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>HOME
                 </button>

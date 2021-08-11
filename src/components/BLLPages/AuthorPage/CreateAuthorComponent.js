@@ -83,7 +83,7 @@ class CreateAuthorComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div data-testid="CreateAuthorComponent" >
                 <br></br>
                 <div className="container">
                     <div className="row">
