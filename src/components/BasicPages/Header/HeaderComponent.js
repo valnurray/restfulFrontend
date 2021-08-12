@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import styles from "./Header.module.css"
+import BgColor from "../BackgroundColorSwitcher/BgColor";
 
 class HeaderComponent extends Component {
     constructor(props) {
@@ -11,11 +12,14 @@ class HeaderComponent extends Component {
     render() {
         return (
             <div className={styles.header}>
+                <BgColor />
                 <header>
+
                     <nav
                         // className="navbar navbar-expand-md navbar-dark bg-dark" style={{color: "white"}}
                     >
                         <div className={styles.headerText}>Training PET application</div>
+
                     </nav>
                 </header>
             </div>

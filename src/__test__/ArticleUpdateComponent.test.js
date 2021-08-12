@@ -1,27 +1,27 @@
 import React from "react";
 import ReactDOM from 'react-dom'
-import ArticleListComponent from '../ArticleListComponent';
+import ArticleUpdateComponent from '../components/BLLPages/ArticlePage/ArticleUpdateComponent';
 import {cleanup, render} from "@testing-library/react";
 import '@testing-library/jest-dom';
 import renderer from "react-test-renderer";
 
-describe("ArticleListComponent", () => {
+describe("ArticleUpdateComponent", () => {
 
     afterEach(cleanup);
 
     it("render without crashing", () => {
         const div = document.createElement(`div`);
-        ReactDOM.render(<ArticleListComponent />, div);
+        ReactDOM.render(<ArticleUpdateComponent />, div);
         ReactDOM.unmountComponentAtNode(div);
     });
 
     it("render button cancel correctly", () => {
-        const {getByTestId} = render(<ArticleListComponent/>);
-        expect(getByTestId('ArticleListComponent')).toHaveTextContent('Article List');
+        const {queryByTestId} = render(<ArticleUpdateComponent/>);
+        expect(queryByTestId('ArticleUpdateComponent')).toBeDefined();
     });
 
     it('matches snapshot', () => {
-        const tree = renderer.create(<ArticleListComponent />).toJSON();
+        const tree = renderer.create(<ArticleUpdateComponent />).toJSON();
         expect(tree).toMatchSnapshot();
 
     })

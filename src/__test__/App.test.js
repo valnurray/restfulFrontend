@@ -5,8 +5,8 @@ import {cleanup, render, screen} from '@testing-library/react'
 import {BrowserRouter, Router} from "react-router-dom";
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom/extend-expect'
-import App from "./App";
-import ListAuthorComponent from "./components/BLLPages/AuthorPage/ListAuthorComponent";
+import App from "../App";
+import ListAuthorComponent from "../components/BLLPages/AuthorPage/ListAuthorComponent";
 
 beforeAll(cleanup);
 afterEach(cleanup);

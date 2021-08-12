@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from 'react-dom'
-import ViewAuthorComponent from '../ViewAuthorComponent';
+import ViewAuthorComponent from '../components/BLLPages/AuthorPage/ViewAuthorComponent';
 import {cleanup, render} from "@testing-library/react";
 import '@testing-library/jest-dom';
 import renderer from "react-test-renderer";

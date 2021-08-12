@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from 'react-dom'
-import ViewArticleComponent from '../ViewArticleComponent';
+import ViewArticleComponent from '../components/BLLPages/ArticlePage/ViewArticleComponent';
 import {cleanup, render} from "@testing-library/react";
 import '@testing-library/jest-dom';
 import renderer from "react-test-renderer";
