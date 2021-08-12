@@ -5,21 +5,26 @@ import {cleanup, render} from "@testing-library/react";
 import '@testing-library/jest-dom';
 import renderer from "react-test-renderer";
 
-afterEach(cleanup);
+describe("ArticleUpdateComponent", () => {
 
-it("render without crashing", () => {
-    const div = document.createElement(`div`);
-    ReactDOM.render(<ArticleUpdateComponent />, div);
-    ReactDOM.unmountComponentAtNode(div);
-});
+    afterEach(cleanup);
 
-it("render button cancel correctly", () => {
-    const {queryByTestId} = render(<ArticleUpdateComponent/>);
-    expect(queryByTestId('ArticleUpdateComponent')).toBeDefined();
-});
+    it("render without crashing", () => {
+        const div = document.createElement(`div`);
+        ReactDOM.render(<ArticleUpdateComponent />, div);
+        ReactDOM.unmountComponentAtNode(div);
+    });
 
-it('matches snapshot', () => {
-    const tree = renderer.create(<ArticleUpdateComponent />).toJSON();
-    expect(tree).toMatchSnapshot();
+    it("render button cancel correctly", () => {
+        const {queryByTestId} = render(<ArticleUpdateComponent/>);
+        expect(queryByTestId('ArticleUpdateComponent')).toBeDefined();
+    });
+
+    it('matches snapshot', () => {
+        const tree = renderer.create(<ArticleUpdateComponent />).toJSON();
+        expect(tree).toMatchSnapshot();
+
+    })
 
 })
+

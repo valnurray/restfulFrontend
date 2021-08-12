@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import ArticleService from '../../../services/ArticleService'
 import {useHistory,} from "react-router-dom";
-import {useParams} from "react-router";
+import {useParams} from "react-router-dom";
 
 function ViewArticleComponent(props) {
     const [article, setArticle] = useState({
@@ -13,6 +13,7 @@ function ViewArticleComponent(props) {
         body: ''
     });
     const history = useHistory();
+
     const {id} = useParams();
 
     useEffect(() => {

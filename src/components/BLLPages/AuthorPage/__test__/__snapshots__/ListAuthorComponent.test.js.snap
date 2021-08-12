@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  data-testid="ListAuthorComponent"
+>
+  <h2
+    className="text-center"
+  >
+    Authors List
+  </h2>
+  <div
+    className="row"
+  >
+    <button
+      className="btn btn-primary"
+      onClick={[Function]}
+    >
+       Add Author
+    </button>
+  </div>
+  <br />
+  <div
+    className="row"
+  >
+    <table
+      className="table table-striped table-bordered"
+    >
+      <thead>
+        <tr>
+          <th>
+             Author ID
+          </th>
+          <th>
+             Author Articles
+          </th>
+          <th>
+             Biography and Contribution
+          </th>
+          <th>
+             Author FirstName
+          </th>
+          <th>
+             Author LastName
+          </th>
+          <th>
+             Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+</div>
+`;

@@ -1,31 +1,29 @@
 import React from "react";
 import ReactDOM from 'react-dom'
-import ArticleCreateComponent from '../ArticleCreateComponent';
+import CreateAuthorComponent from '../CreateAuthorComponent';
 import {cleanup, render} from "@testing-library/react";
 import '@testing-library/jest-dom';
 import renderer from "react-test-renderer";
 
-describe("ArticleCreateComponent", () => {
+describe("UpdateAuthorComponent", () => {
+    const match = {params : { id: 1}};
 
     afterEach(cleanup);
 
     it("render without crashing", () => {
         const div = document.createElement(`div`);
-        ReactDOM.render(<ArticleCreateComponent />, div);
+        ReactDOM.render(<CreateAuthorComponent match={match}/>, div);
         ReactDOM.unmountComponentAtNode(div);
     });
 
     it("render button cancel correctly", () => {
-        const {getByTestId} = render(<ArticleCreateComponent/>);
-        expect(getByTestId('ArticleCreateComponent')).toHaveTextContent('ADD Article');
+        const {getByTestId} = render(<CreateAuthorComponent match={match} />);
+        expect(getByTestId('CreateAuthorComponent')).toHaveTextContent('to AuthorList');
     });
 
     it('matches snapshot', () => {
-        const tree = renderer.create(<ArticleCreateComponent />).toJSON();
+        const tree = renderer.create(<CreateAuthorComponent match={match} />).toJSON();
         expect(tree).toMatchSnapshot();
-
     })
 
-});
-
-
+})

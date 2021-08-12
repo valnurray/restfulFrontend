@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`matches snapshot 1`] = `
+exports[`ArticleListComponent matches snapshot 1`] = `
 <div
   className="container"
   data-testid="ArticleListComponent"

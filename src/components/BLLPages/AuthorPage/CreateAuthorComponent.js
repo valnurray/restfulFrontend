@@ -93,8 +93,9 @@ class CreateAuthorComponent extends Component {
                         <div className="card col-md-6 offset-md-3 offset-md-3">
                             {
                                 this.getTitle()
-                            }
+                            }<h3 className="text-center">to AuthorList</h3>
                             <div className="card-body">
+
                                 <form>
 
                                     <div className="form-group">
